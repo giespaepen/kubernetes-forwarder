@@ -1,4 +1,4 @@
-# Romware Platform Kubernetes Forwarder
+# Kubernetes Forwarder
 
 > Little port forwarding tool
 
@@ -62,11 +62,3 @@ Then in a separate window run:
 env NAMESPACE=romware-platform yarn start
 # Then select the zk-0 pod
 ```
-
-## Who should I talk to:
-
-- 👹 Developer: Gie Spaepen
-
-## Read more
-
-[General project readme](../../Readme.md)

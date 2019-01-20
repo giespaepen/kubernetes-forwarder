@@ -12,6 +12,10 @@
   "description": "> Little port forwarding tool",
   "version": "1.2.0",
   "main": "index.js",
+  "bin": {
+    "kubernetes-forwarder": "./bin/cmd.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "start": "[ -f ./index.js ] && node index.js || yarn build-start",
     "build-start": "yarn build && yarn start",

@@ -13,10 +13,10 @@ import { CONFIG_FILE, writeConfig } from "./writeConfig";
 
 type Answers = { items: ServicePort[] };
 
-// Print the intro
-intro();
+async function main() {
+  // Print the intro
+  intro();
 
-(async function() {
   let namespace: string | undefined;
   let servicePorts: ServicePort[] | undefined;
 
@@ -90,4 +90,6 @@ intro();
       kubectlprocesses.push(kubectl);
     });
   }
-})();
+}
+
+export default main;
