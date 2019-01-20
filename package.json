@@ -10,7 +10,7 @@
   },
   "name": "kubernetes-forwarder",
   "description": "> Little port forwarding tool",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "bin": {
     "kubernetes-forwarder": "./bin/cmd.js"
@@ -23,5 +23,5 @@
     "clean": "rm index.js"
   },
   "author": "Gie Spaepen <giespaepen@outlook.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
