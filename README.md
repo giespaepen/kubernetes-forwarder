@@ -1,30 +1,17 @@
 # Kubernetes Forwarder
 
-> Little port forwarding tool
+> Little wrapper around kubectl to facilitate port forwarding and to rapidly restart a previous session.
 
-## Dependencies
+## Requirements
 
-- Install yarn. [More information](https://yarnpkg.com/lang/en/docs/install/).
-- Node (>8) should be installed.
-- Kubectl installed and configured [More information](https://project.rombit.be/wiki/display/DEV/Kubectl+setup)
+- Node (8+) must be installed
+- kubectl must be installed and configured correctly
 
-### Build the project
+## How it works
 
-- Build `yarn build`
-- Build and run `yarn build-start`
+Run `kubernetes-forwarder`
 
-## How to run?
-
-When you run this the first time, just install all the dependencies by running `yarn`. Then you run the test runner:
-
-```bash
-yarn start
-
-# Run the program
-yarn start
-```
-
-Then you can first select a namespace and then the pods to forward to. Notice that you'll need to have access
+First you select select a namespace and then the pods to forward to. Notice that you'll need to have access
 to those namespaces in order to be able to port forward.
 
 ### Config file
@@ -42,23 +29,18 @@ shared kafka cluster you can run it like so:
 
 ```bash
 # Run the program with port forwarding
-env NAMESPACE=kafka yarn start
+env NAMESPACE=some-namespace kubernetes-forwarder
 ```
 
-##### Practical example, forward to kafka in the staging environment
+## Development
 
-In the staging environment the kafka and zookeeper are **not on the same cluster**. Therefore you'll need to run two commands:
+### Dependencies
 
-```bash
-# Run the program with port forwarding
-env NAMESPACE=kafka yarn start
-# Then select the zk-0 pod
-```
+- Install yarn. [More information](https://yarnpkg.com/lang/en/docs/install/).
+- Node (>8) should be installed.
+- Kubectl installed and configured [More information](https://project.rombit.be/wiki/display/DEV/Kubectl+setup)
 
-Then in a separate window run:
+### Build the project
 
-```bash
-# Run the program with port forwarding
-env NAMESPACE=romware-platform yarn start
-# Then select the zk-0 pod
-```
+- Build `yarn build`
+- Build and run `yarn build-start`
