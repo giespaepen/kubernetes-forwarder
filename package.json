@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^0.0.41",
+    "@types/node": "^9.6.6",
+    "typescript": "^2.8.3"
+  },
+  "name": "kubernetes-forwarder",
+  "description": "> Little port forwarding tool",
+  "version": "1.2.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "[ -f ./index.js ] && node index.js || yarn build-start",
+    "build-start": "yarn build && yarn start",
+    "build": "tsc",
+    "clean": "rm index.js"
+  },
+  "author": "Gie Spaepen <giespaepen@outlook.com>",
+  "license": "ISC"
+}
