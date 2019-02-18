@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "chalk": "^2.4.1",
+    "configstore": "^4.0.0",
     "inquirer": "^5.2.0"
   },
   "devDependencies": {
+    "@types/configstore": "^4.0.0",
     "@types/inquirer": "^0.0.41",
     "@types/node": "^9.6.6",
     "typescript": "^3.3.3"

@@ -7,9 +7,8 @@ import { ServicePort } from "./domain";
 import { getNamespace } from "./getNamespace";
 import { getPods } from "./getPods";
 import { intro } from "./intro";
-import { configExists, readConfig } from "./readConfig";
+import { configExists, readConfig, writeConfig } from "./readConfig";
 import { terminate } from "./terminate";
-import { CONFIG_FILE, writeConfig } from "./writeConfig";
 
 type Answers = { items: ServicePort[] };
 
@@ -23,11 +22,6 @@ async function main() {
   // Get the settings from last config
   if (configExists()) {
     console.log(chalk.yellow("Found a config, will start from that."));
-    console.log(
-      chalk.gray(
-        `If you don't want this, remove ${CONFIG_FILE} from this directory`
-      )
-    );
     let config = readConfig();
     namespace = config.namespace;
     servicePorts = config.servicePorts;
