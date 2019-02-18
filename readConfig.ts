@@ -30,7 +30,6 @@ export function writeConfig(
 }
 
 export function isForceNew() {
-  console.log(process.argv);
   return process.argv.filter(x => x === NEWARG).length > 0;
 }
 
