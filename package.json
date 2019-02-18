@@ -13,13 +13,13 @@
   "name": "kubernetes-forwarder",
   "description": "> Little port forwarding tool",
   "version": "1.2.1",
-  "main": "index.js",
+  "main": "./bin/cmd.js",
   "bin": {
     "kubernetes-forwarder": "./bin/cmd.js"
   },
   "preferGlobal": true,
   "scripts": {
-    "start": "[ -f ./index.js ] && node index.js || yarn build-start",
+    "start": "[ -f ./index.js ] && node .bin/cmd.js || yarn build-start",
     "build-start": "yarn build && yarn start",
     "build": "tsc",
     "clean": "rm index.js"
