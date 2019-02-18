@@ -6,7 +6,7 @@
   "devDependencies": {
     "@types/inquirer": "^0.0.41",
     "@types/node": "^9.6.6",
-    "typescript": "^2.8.3"
+    "typescript": "^3.3.3"
   },
   "name": "kubernetes-forwarder",
   "description": "> Little port forwarding tool",
