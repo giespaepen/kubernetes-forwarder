@@ -18,18 +18,6 @@ to those namespaces in order to be able to port forward.
 The program uses the package config store to store your last connection. When you rerun the command, the last
 connection will be reused. If you want to **override** the last connection, run: `kubernetes-forwarder new`.
 
-#### Optional stuff
-
-##### Run without chosing a namespace
-
-You can run the program, skipping the first step. For example, if you want to connect to a pod of the
-shared kafka cluster you can run it like so:
-
-```bash
-# Run the program with port forwarding
-env NAMESPACE=some-namespace kubernetes-forwarder
-```
-
 ## Development
 
 ### Dependencies
