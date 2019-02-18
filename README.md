@@ -14,11 +14,9 @@ Run `kubernetes-forwarder`
 First you select select a namespace and then the pods to forward to. Notice that you'll need to have access
 to those namespaces in order to be able to port forward.
 
-### Config file
-
-When you first run this program, you have to select the **namespace** and the **services** to forward. When done
-a `config.json` will be saved. The config is automatically loaded when you restart the program. If you don't
-want it anymore. Just delete the config file.
+### Configstore
+The program uses the package config store to store your last connection. When you rerun the command, the last
+connection will be reused. If you want to **override** the last connection, run: `kubernetes-forwarder new`.
 
 #### Optional stuff
 
@@ -43,4 +41,4 @@ env NAMESPACE=some-namespace kubernetes-forwarder
 ### Build the project
 
 - Build `yarn build`
-- Build and run `yarn build-start`
+- And run `yarn start`, run `yarn start:new` to override the last connection in the config

@@ -7,7 +7,7 @@ import { ServicePort } from "./domain";
 import { getNamespace } from "./getNamespace";
 import { getPods } from "./getPods";
 import { intro } from "./intro";
-import { configExists, readConfig, writeConfig } from "./readConfig";
+import { configExists, readConfig, writeConfig, isForceNew, NEWARG } from "./readConfig";
 import { terminate } from "./terminate";
 
 type Answers = { items: ServicePort[] };
@@ -20,11 +20,13 @@ async function main() {
   let servicePorts: ServicePort[] | undefined;
 
   // Get the settings from last config
-  if (configExists()) {
+  if (configExists() && !isForceNew()) {
     console.log(chalk.yellow("Found a config, will start from that."));
     let config = readConfig();
     namespace = config.namespace;
     servicePorts = config.servicePorts;
+
+    console.log(chalk.gray(`If you want to start with a new connection add the arg ${NEWARG} to the command.`))
   }
 
   if (!namespace) {

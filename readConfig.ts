@@ -10,15 +10,16 @@ export type StoredConnection = {
 };
 
 const config = new Configstore(packageName(), {});
-const key = "CONN";
+const KEY = "CONN";
+export const NEWARG = "new";
 
 
 export function configExists(): boolean {
-  return config.get(key) != null;
+  return config.get(KEY) != null;
 }
 
 export function readConfig(): StoredConnection {
-  return JSON.parse(config.get(key));
+  return JSON.parse(config.get(KEY));
 }
 
 export function writeConfig(
@@ -28,8 +29,13 @@ export function writeConfig(
   writeConfigInternal({ namespace, servicePorts });
 }
 
+export function isForceNew() {
+  console.log(process.argv);
+  return process.argv.filter(x => x === NEWARG).length > 0;
+}
+
 function writeConfigInternal(connection: StoredConnection) {
-  config.set(key, JSON.stringify(connection));
+  config.set(KEY, JSON.stringify(connection));
 }
 
 function packageName() {
